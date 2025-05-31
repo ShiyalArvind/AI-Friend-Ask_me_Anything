@@ -1,0 +1,2 @@
+C:/Users/USEr/Desktop/AI Friend/AI-Friend-Ask_me_Anything/friend/android/app/.cxx/Debug/1qc4h3k2/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/USEr/Desktop/AI Friend/AI-Friend-Ask_me_Anything/friend/android/app/.cxx/Debug/1qc4h3k2/armeabi-v7a/CMakeFiles/rebuild_cache.dir

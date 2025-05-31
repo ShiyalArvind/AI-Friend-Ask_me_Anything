@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "511543557570",
+    "firebase_url": "https://ai-friend---ask-me-anything-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ai-friend---ask-me-anything",
+    "storage_bucket": "ai-friend---ask-me-anything.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511543557570:android:38ff0af4ff084a11b06a5b",
+        "android_client_info": {
+          "package_name": "com.ai.friend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgQF7yhxKbait2cIvoVIcVAJSLDKi88F8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
