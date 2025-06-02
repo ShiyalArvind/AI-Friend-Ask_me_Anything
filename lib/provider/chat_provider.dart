@@ -102,7 +102,7 @@ class ChatProvider extends ChangeNotifier {
               messages:
                   _textMessages
                       .where((m) => m.text != ConstantsFile.loadingMark)
-                      .map((m) => Messages(role: m.isSender ? 'user' : 'assistant', content: m.text))
+                      .map((m) => Messages(role: m.isSender ? ConstantsFile.user : ConstantsFile.firebaseAssistant, content: m.text))
                       .toList(),
             ).toJson();
 
@@ -125,9 +125,9 @@ class ChatProvider extends ChangeNotifier {
   Future<void> _initUserAndPaths() async {
     _userId = FirebaseAuth.instance.currentUser?.uid;
     if (_userId != null) {
-      final users = await _firestoreService.fetchData('users');
-      final user = users.firstWhere((u) => u['userId'] == _userId, orElse: () => {});
-      currentUser = user['name'] ?? '';
+      final users = await _firestoreService.fetchData(ConstantsFile.firebaseUserCollection);
+      final user = users.firstWhere((u) => u[ConstantsFile.paramUserId] == _userId, orElse: () => {});
+      currentUser = user[ConstantsFile.paramName] ?? '';
       SharedPreference().setStringPref(ConstantsFile.sharedPrefName, currentUser);
       _chatPath = "chat_$_userId";
 
@@ -144,13 +144,13 @@ class ChatProvider extends ChangeNotifier {
 
   void _addLoadingMessage(List<ChatMessage> list) {
     list.add(
-      ChatMessage(text: ConstantsFile.loadingMark, isSender: false, timestamp: DateTime.now(), username: 'assistant', userId: ''),
+      ChatMessage(text: ConstantsFile.loadingMark, isSender: false, timestamp: DateTime.now(), username: ConstantsFile.firebaseAssistant, userId: ''),
     );
   }
 
   void _replaceLoadingOrAdd(List<ChatMessage> list, String text) {
     final index = list.indexWhere((msg) => msg.text == ConstantsFile.loadingMark && !msg.isSender);
-    final msg = ChatMessage(text: text, isSender: false, timestamp: DateTime.now(), username: 'assistant', userId: '');
+    final msg = ChatMessage(text: text, isSender: false, timestamp: DateTime.now(), username:  ConstantsFile.firebaseAssistant, userId: '');
     if (index != -1) {
       list[index] = msg;
     } else {

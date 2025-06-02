@@ -12,4 +12,7 @@ class StringFile {
   static const String mobileNumber = 'Mobile Number';
 static const String alreadyHaveAccount = 'Already have an account?';
 static const String typeYourMessageHere = "Type your message here";
+static const String askMeAnything = "Ask me anything";
+static const String noMessages = "No messages yet.";
+
 }

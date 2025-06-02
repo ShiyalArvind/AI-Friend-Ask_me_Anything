@@ -54,6 +54,7 @@ class ConstantsFile {
 
 static String firebaseChatCollection = 'chat';
 static String firebaseUserCollection = 'users';
+static String firebaseAssistant='assistant';
 
 static String headerContentType = 'Content-Type';
 static String headerAuthorization = 'Authorization';
@@ -82,6 +83,7 @@ static String sharedPrefName = 'user_name';
 
   static String assetFolder = "asset_folder";
   static String file = "file";
+  static String user = "user";
 }
 //'name': '',
 //     'email': '',

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:friend/provider/auth_provider.dart';
+import 'package:friend/utils/string_file.dart';
 import 'package:provider/provider.dart';
 
 import '../../auth/login_page.dart';
@@ -73,7 +74,7 @@ class _GenericChatViewState extends State<GenericChatView> {
                         }
 
                         if (messages.isEmpty) {
-                          return const Center(child: Text("No messages yet.", style: TextStyle(fontSize: 16)));
+                          return const Center(child: Text(StringFile.noMessages, style: TextStyle(fontSize: 16)));
                         }
 
                         return ChatTimeline(
@@ -131,7 +132,7 @@ class ProviderChatView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Chat"),
+          title: const Text(StringFile.askMeAnything),
           centerTitle: true,
           backgroundColor: ColorFile.primaryColor,
           actions: [
