@@ -64,6 +64,7 @@ class ChatProvider extends ChangeNotifier {
 
   Future<void> getAllMessages() async {
     _isMessageLoading = true;
+    notifyListeners();
     await _initUserAndPaths();
     _textSubscription?.cancel();
     _textSubscription = _realtimeService.streamData(_chatPath).listen((event) {
